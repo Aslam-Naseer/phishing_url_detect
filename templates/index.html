@@ -30,33 +30,20 @@
   </head>
 
   <body>
-    <!-- <div class=" container">
-    <div class="row">
-        <div class="form col-md" id="form1">
-            <h2>PHISHING URL DETECTION</h2>
-    
-            <br>
-            <form action="/" method ="post">
-                <input type="text" class="form__input" name ='url' id="url" placeholder="Enter URL" required="" />
-                <label for="url" class="form__label">URL</label>
-                <button class="button" role="button" >Check here</button>
-            </form>
-           
-    </div>
-    
-    <div class="col-md" id="form2">
-        
-        <br>
-        <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
-           
-        <br>
-        <h3 id="prediction"></h3>
-        <button class="button2" id="button2" role="button" onclick="window.open('{{url}}')" target="_blank" >Still want to Continue</button>
-        <button class="button1" id="button1" role="button"  onclick="window.open('{{url}}')" target="_blank">Continue</button>
-    </div> 
-</div>
-<br>
-</div> -->
+    <header>
+      <nav>
+        <ul>
+          <li style="display: flex;justify-content: flex-end; gap: 30px;margin-right: 30px;">
+            <a href="awareness" style="  font-family: 'Inter',sans-serif;text-decoration: none; margin-top: 10px;">What's Phishing ?</a>
+            <a href="" style="  font-family: 'Inter',sans-serif;text-decoration: none;margin-top: 10px;">How to improve your Privacy</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+    <br>
+    <br>
+    <br>
 
     <div class="container">
       <div>Get your <img src="../static/link.svg" alt="links" /> checked</div>
@@ -91,7 +78,7 @@
         onclick="window.open('{{url}}')"
         target="_blank"
       >
-        Continue
+        Continue to site
       </button>
     </div>
 
@@ -129,5 +116,21 @@
         document.getElementById("button2").style.display = "block";
       }
     </script>
+    {% if features %}
+    <div class="features-container" style="display: flex; flex-direction: coliumn;justify-content: center;">
+      <!-- <ol> -->
+        <div class="feature_details" style="display: flex; flex-direction: coliumn;justify-content: center;">
+          <h2>Key features from URL</h2>
+          <br>
+
+          {% for i in range (0,features| length) %}
+          <div class="feature_box" style="background-color: rgb(212, 212, 212); border-radius: 30px; margin-bottom: 20px;padding: 30px;">
+            <li style="list-style-type: none; font-size:medium;">{{ features[i] }} : {{ res[i] }}</li> 
+          </div>
+          {% endfor %}
+        </div>
+      <!-- </ol> -->
+    </div>
+    {% endif %}
   </body>
 </html>

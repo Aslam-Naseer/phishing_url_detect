@@ -5,7 +5,7 @@
 
 
 .container {
-  min-height: 98vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,12 @@
   gap: 20px;
 
   font-family: "Inter", sans-serif;
+}
+.feature_details
+{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .container>div:first-child {
