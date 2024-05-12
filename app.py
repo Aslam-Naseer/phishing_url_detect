@@ -87,6 +87,10 @@ def aware():
 def privacy_tips():
     return render_template("privacy_tips.html")
 
+@app.route("/about", methods=["GET", "POST"])
+def about():
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

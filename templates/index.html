@@ -60,18 +60,22 @@
       </div>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="awareness">What's Phishing</a></li>
         <li><a href="privacy_tips">Safety tips</a></li>
       </ul>
     </nav>
   </header>
-  <br><br><br>
+  <br>
+  <br>
 
   <!-- Main content -->
   <div style="display: flex; flex-direction: row; align-items: center;">
+    <br>
+    <br>
     <!-- Container with text and form -->
     <div class="container">
+      
       <!-- Logo and slogan -->
       <div style="display: flex; flex-direction: row;">
         <div style="display: flex; flex-direction: row; align-items: center;">
@@ -96,25 +100,32 @@
         <form id="link-form" action="/" method="post">
           <input type="text" name="url" id="url" placeholder="Enter URL" required value="{{ url }}" />
         </form>
-        <button class="check-btn" style="position: absolute; margin-left: 520px ; margin-top: 8px; border-radius: 30px ; font-size: medium;"
+        <button class="check-btn" style="position: absolute; margin-left: 490px ; margin-top: 5px; border-radius: 30px ; font-size: medium;"
           type="submit" form="link-form" role="button">
           Analyze
         </button>
       </div>
-      <!-- Prediction result buttons -->
-      <h3 id="prediction"></h3>
-      <button id="button2" role="button" onclick="window.open('{{url}}')" target="_blank">
-        Still want to Continue
-      </button>
-      <button id="button1" role="button" onclick="window.open('{{url}}')" target="_blank">
-        Continue to site
-      </button>
+
+      <br>
+      
+      
     </div>
-    <!-- Image -->
+    <!-- Prediction result buttons -->
     <div style="padding:0px; margin-left: 20%;">
       <img width="460" height="460" src="static/imgs/landimg.png" alt="img">
     </div>
   </div>
+  <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+    <h3 id="prediction" style="text-align: center;font-family: 'Outfit'; font-size: 30px;padding-top: 40px;padding-bottom: 30px;"></h3>
+  <button id="button2" role="button" style="font-size: 20px;" onclick="window.open('{{url}}')" target="_blank">
+    Still want to Continue
+  </button>
+  <button id="button1" role="button" style="font-size: 20px;" onclick="window.open('{{url}}')" target="_blank">
+    Continue to site
+  </button>
+  </div>
+  <!-- Image -->
+  
 
   <!-- Div to show on scroll -->
  
@@ -144,6 +155,44 @@
     });
     </script>
 
+<script>
+  let x = "{{xx}}";
+  let num = x * 100;
+  if (0 <= x && x < 0.5) {
+    num = 100 - num;
+  }
+  let txtx = num.toString();
+  if (x <= 1 && x >= 0.5) {
+    var label = "Link is " + txtx + "% safe";
+    document.getElementById("prediction").innerHTML = label;
+    document.getElementById("button1").style.display = "block";
+  } else if (0 <= x && x < 0.5) {
+    var label = "Link is " + txtx + "% unsafe";
+    document.getElementById("prediction").innerHTML = label;
+    document.getElementById("button2").style.display = "block";
+  }
+</script>
+{% if features %}
+<div class="features-container" style="display: flex; flex-direction: coliumn;justify-content: center;">
+  <!-- <ol> -->
+  <div class="feature_details" style="display: flex; flex-direction: coliumn;justify-content: center; align-items: center;">
+    <br>
+    <br>
+    <h2>Key features from URL</h2>
+    <br>
+
+    {% for i in range (0,features| length) %}
+    <div class="feature_box"
+      style="background-color: rgb(166, 224, 255); border-radius: 30px; margin-bottom: 20px;padding: 30px;">
+      <li style="list-style-type: none; font-size:medium;background-color: rgb(166, 224, 255);">{{ features[i] }} : {{ res[i] }}</li>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- </ol> -->
+</div>
+{% endif %}
+
+
 <!-- Arrow animation -->
 <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
   <img width="80" height="80"
@@ -153,10 +202,10 @@
 </div>
 
 
-<div class="pg2">
+<div class="pg2" style="background-color: #E3F3FE;">
 
-  <div style="padding-top: 60px;padding-left: 60px;">
-    <div style="display: flex;flex-direction: row;">
+  <div style="padding-top: 60px;padding-left: 60px;background-color: #E3F3FE;">
+    <div style="display: flex;flex-direction: row;background-color: #E3F3FE;">
       <img style="padding-left: 50px;" src="../static/imgs/why.png" alt="image">
       <div style="display: flex;flex-direction: column;justify-content:center; padding-left:15% ;">
         <h1 style="font-family: 'Outfit'; font-size: 60px;">Why Phishsnooper ?</h1>
@@ -206,12 +255,77 @@
 
 </div>
 
-<div style="padding: 300px;"></div>
+<div style="padding: 100px;"></div>
 
 
 
 </body>
 
+<footer class="footer">
+  <div class="footer__addr">
+    <h1 style="font-family: 'Outfit';background-color: #04043c;color: beige;">PHISHSNOOPER</h1>
+        
+    <h2 style="font-size: 20px; color: rgb(197, 197, 197);">Contact</h2>
+    
+    <address>
+     India +911119999<br>
+      
+    </address>
+    <h2 style="font-size: 20px; color: rgb(197, 197, 197);">Email Us</h2>
+    <address>
+      ask.phishsnooper@gmail.com<br>
+      
+    </address>
+  </div>
+  
+  <ul class="footer__nav" style="padding-left: 60%;">
+     
+    <li class="nav__item">
+      <h2 class="nav__title" style="font-size:20px ;">Connect with us</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Git Hub</a>
+        </li>
+        
+        <li>
+          <a href="#">LinkedIn</a>
+        </li>
+        
+        <li>
+          <a href="#">Mail</a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav__item">
+      <h2 class="nav__title" style="font-size: 20px;">Legal</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#">Terms of Use</a>
+        </li>
+        
+        <li>
+          <a href="#">Sitemap</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+  <div class="legal">
+  <p style="background-color: #04043c;">&copy; 2024 PHISHSNOOPER. All rights reserved.</p>
+    
+  </div>
+</footer>
+
 
 
 </html>
+
+
+
+
