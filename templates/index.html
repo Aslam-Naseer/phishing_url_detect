@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="This website is develop for identify the safety of url." />
-  <meta name="keywords" content     ="phishing url,phishing,cyber security,machine learning,classifier,python" />
+  <meta name="description" content="This website is developed to identify the safety of URLs." />
+  <meta name="keywords" content="phishing url,phishing,cyber security,machine learning,classifier,python" />
 
   <link href="static/styles.css" rel="stylesheet" />
   <title>Phishsnooper</title>
@@ -14,27 +14,44 @@
   <style>
     @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@100..900&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+    /* Animation for arrow */
+    @keyframes moveUpDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Styling for pg2 div */
+    .pg2 {
+      opacity: 0; /* Initially hide the div */
+      padding-bottom: 200px;
+      transition: opacity 0.5s ease; /* Add transition effect */
+    }
+    .pg3 {
+      opacity: 0; /* Initially hide the div */
+      padding-bottom: 200px;
+      transition: opacity 1s ease; /* Add transition effect */
+    }
+    
+
   </style>
 </head>
 
 <body>
   <header>
-    <!-- <nav>
-        <ul>
-          <li style="display: flex;justify-content: flex-end; gap: 30px;margin-right: 30px;">
-            <a href="awareness" style="  font-family: 'Inter',sans-serif;text-decoration: none; margin-top: 10px;">PHISHSNOOPER</a>
-            <a href="awareness" style="  font-family: 'Inter',sans-serif;text-decoration: none; margin-top: 10px;">What's Phishing ?</a>
-            <a href="" style="  font-family: 'Inter',sans-serif;text-decoration: none;margin-top: 10px;">How to improve your Privacy</a>
-            <a href="" style="  font-family: 'Inter',sans-serif;text-decoration: none;margin-top: 10px;">About</a>
-          </li>
-        </ul>
-      </nav> -->
-
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="logo" style="  background-color: #333; ">
-        <div style="display: flex;flex-direction: row;align-items: center;  background-color: #333; ">
-          <div style="display: flex;flex-direction: row;align-items: center;font-family: 'Outfit';  background-color: #333; "><img
-              style="  background-color: #333; " width="30" height="30"
+      <div class="logo" style="background-color: #333;">
+        <div style="display: flex; flex-direction: row; align-items: center; background-color: #333;">
+          <div style="display: flex; flex-direction: row; align-items: center; font-family: 'Outfit'; background-color: #333;">
+            <img style="background-color: #333;" width="30" height="30"
               src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-link-web-flaticons-flat-flat-icons-3.png"
               alt="external-link-web-flaticons-flat-flat-icons-3" />
             PHISHSNOOPER
@@ -48,43 +65,43 @@
         <li><a href="privacy_tips">Safety tips</a></li>
       </ul>
     </nav>
-
   </header>
-  <br>
-  <br>
-  <br>
+  <br><br><br>
 
-
-  <div style="display: flex;flex-direction: row;align-items: center;">
+  <!-- Main content -->
+  <div style="display: flex; flex-direction: row; align-items: center;">
+    <!-- Container with text and form -->
     <div class="container">
-      <div style="display: flex;flex-direction: row;">
-        <div style="display: flex;flex-direction: row;align-items: center;">
+      <!-- Logo and slogan -->
+      <div style="display: flex; flex-direction: row;">
+        <div style="display: flex; flex-direction: row; align-items: center;">
           <img width="64" height="64"
             src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-link-web-flaticons-flat-flat-icons-3.png"
             alt="external-link-web-flaticons-flat-flat-icons-3" />
         </div>
-        <div style="display: flex;flex-direction: row;align-items: center; font-family: 'Outfit';">
+        <div style="display: flex; flex-direction: row; align-items: center; font-family: 'Outfit';">
           PHISHSNOOPER
         </div>
       </div>
-      <br>
+      <!-- Slogan -->
+      <br><br>
       <div style="font-size: 1.9rem; color: rgb(78, 78, 78);">Surf the web with confidence.</div>
       <div style="font-size: 1.9rem; color: rgb(78, 78, 78);">Protect yourself from malware, fake and phishing sites.
       </div>
-      <br>
-      <br>
-      <div style="font-size: 1.4rem; color: rgb(78, 78, 78);padding-left: 20px;">Want to check if a link is safe or not? Paste it here</div>
+      <br><br>
+      <!-- Form for URL input -->
+      <div style="font-size: 1.4rem; color: rgb(78, 78, 78); padding-left: 20px;">Want to check if a link is safe or not?
+        Paste it here</div>
       <div style="display:flex ; flex-direction: row; ">
         <form id="link-form" action="/" method="post">
           <input type="text" name="url" id="url" placeholder="Enter URL" required value="{{ url }}" />
-      </form>
-      <button class="check-btn" style="position: absolute; margin-left:520px ;margin-top: 8px; border-radius:30px ;font-size: medium;" type="submit" form="link-form" role="button">
-        Analyze
-      </button>
-
+        </form>
+        <button class="check-btn" style="position: absolute; margin-left: 520px ; margin-top: 8px; border-radius: 30px ; font-size: medium;"
+          type="submit" form="link-form" role="button">
+          Analyze
+        </button>
       </div>
-      
-
+      <!-- Prediction result buttons -->
       <h3 id="prediction"></h3>
       <button id="button2" role="button" onclick="window.open('{{url}}')" target="_blank">
         Still want to Continue
@@ -93,59 +110,108 @@
         Continue to site
       </button>
     </div>
-    <div style="padding:0px;margin-left: 20%;">
+    <!-- Image -->
+    <div style="padding:0px; margin-left: 20%;">
       <img width="460" height="460" src="static/imgs/landimg.png" alt="img">
     </div>
-
-
   </div>
 
-
+  <!-- Div to show on scroll -->
+ 
   <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-
   <script>
-    let x = "{{xx}}";
-    let num = x * 100;
-    if (0 <= x && x < 0.5) {
-      num = 100 - num;
-    }
-    let txtx = num.toString();
-    if (x <= 1 && x >= 0.5) {
-      var label = "Link is " + txtx + "% safe";
-      document.getElementById("prediction").innerHTML = label;
-      document.getElementById("button1").style.display = "block";
-    } else if (0 <= x && x < 0.5) {
-      var label = "Link is " + txtx + "% unsafe";
-      document.getElementById("prediction").innerHTML = label;
-      document.getElementById("button2").style.display = "block";
-    }
-  </script>
-  {% if features %}
-  <div class="features-container" style="display: flex; flex-direction: coliumn;justify-content: center;">
-    <!-- <ol> -->
-    <div class="feature_details" style="display: flex; flex-direction: coliumn;justify-content: center;">
-      <h2>Key features from URL</h2>
-      <br>
+    // Function to toggle visibility and fade-in effect of pg2 div on scroll
+    window.addEventListener("scroll", function () {
+      var scrollPosition = window.scrollY;
+      var pg2 = document.querySelector(".pg2");
+      // If scroll position reaches certain point, show pg2 div with fade-in effect
+      if (scrollPosition > 200) {
+        pg2.style.opacity = "1";
+      } else {
+        pg2.style.opacity = "0";
+      }
+    });
 
-      {% for i in range (0,features| length) %}
-      <div class="feature_box"
-        style="background-color: rgb(212, 212, 212); border-radius: 30px; margin-bottom: 20px;padding: 30px;">
-        <li style="list-style-type: none; font-size:medium;">{{ features[i] }} : {{ res[i] }}</li>
+    window.addEventListener("scroll", function () {
+      var scrollPosition = window.scrollY;
+      var pg2 = document.querySelector(".pg3");
+      // If scroll position reaches certain point, show pg2 div with fade-in effect
+      if (scrollPosition > 200) {
+        pg2.style.opacity = "1";
+      } else {
+        pg2.style.opacity = "0";
+      }
+    });
+    </script>
+
+<!-- Arrow animation -->
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+  <img width="80" height="80"
+    src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/64/external-down-arrow-arrows-dreamstale-lineal-dreamstale-21.png"
+    alt="external-down-arrow-arrows-dreamstale-lineal-dreamstale-21"
+    style="display: inline; animation: moveUpDown 2s infinite;">
+</div>
+
+
+<div class="pg2">
+
+  <div style="padding-top: 60px;padding-left: 60px;">
+    <div style="display: flex;flex-direction: row;">
+      <img style="padding-left: 50px;" src="../static/imgs/why.png" alt="image">
+      <div style="display: flex;flex-direction: column;justify-content:center; padding-left:15% ;">
+        <h1 style="font-family: 'Outfit'; font-size: 60px;">Why Phishsnooper ?</h1>
+        <p style="font-family: 'Inter';font-size: 30px; margin-top: 70px;width: 900px;color: #333;">Every day, countless individuals fall victim to phishing sites, putting their personal information, finances, and online security at risk</p>
+        <p style="font-family: 'Inter';font-size: 30px; margin-top: 70px;width: 900px;color: #333;">With the rise of sophisticated cyber threats, it's more crucial than ever to stay vigilant while navigating the digital landscape.</p>
       </div>
-      {% endfor %}
+        
+
     </div>
-    <!-- </ol> -->
+    
   </div>
-  {% endif %}
+
+  <!-- Add your content here -->
+</div>
+
+<div class="pg3">
+
+  <div style="padding-top: 0px;padding-left: 60px;">
+    <div style="display: flex;flex-direction: row;">
+      <div style="display: flex;flex-direction: column;justify-content:center; padding-left:10% ;padding-right: 10%;">
+        <h1 style="font-family: 'Outfit'; font-size: 60px;">Detect. Protect. </h1>
+        <p style="font-family: 'Inter';font-size: 30px; margin-top: 70px;width: 600px;color: #333;">Phishsnooper user machine learning to swiftly identify phishing websites, safeguarding you from online threats.</p>
+        <p style="font-family: 'Inter';font-size: 30px; margin-top: 70px;width: 600px;color: #333;">Now staying protected from fake sites is as easy as pasting it here !</p>
+      </div>
+      <img style="padding-left: 50px;" src="../static/imgs/why2.png" alt="image">
+        
+
+    </div>
+    
+  </div>
+
+  <!-- Add your content here -->
+</div>
+
+<div style="display: flex;flex-direction: row;align-items: center; justify-content: center;">
+  <button onclick="scrollToTop()" style="height: 70px;width:150px;background-color: rgb(71, 186, 248);border: 0px;border-radius: 30px;font-size: 1rem;font-family: 'Outfit'; color: beige;">Use now</button>
+    <script>
+        function scrollToTop() {
+            // Scroll to the top of the page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scrolling effect
+            });
+        }
+    </script>
+
+
+</div>
+
+<div style="padding: 300px;"></div>
+
+
+
 </body>
+
+
 
 </html>
