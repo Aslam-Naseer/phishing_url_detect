@@ -87,5 +87,6 @@ def aware():
 def privacy_tips():
     return render_template("privacy_tips.html")
 
+
 if __name__ == "__main__":
     app.run(debug=True)

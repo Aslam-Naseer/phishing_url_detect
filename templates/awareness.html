@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This website is develop for identify the safety of url."
+    />
+    <meta
+      name="keywords"
+      content="phishing url,phishing,cyber security,machine learning,classifier,python"
+    />
+    <link href="../static/styles.css" rel="stylesheet" />
+    <title>Phishsnooper</title>
     <style>
-        body {
-            font-family: 'DM Mono', monospace;
-            padding: 30px;
-            line-height: 1.6;
-        }
-        p {
-            margin-bottom: 20px;
-            font-weight: lighter;
-        }
-        h1, h2, h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: lighter;
-        }
-        h1 {
-            font-size: 2em;
-        }
-        h2 {
-            font-size: 1.5em;
-        }
-        h3 {
-            font-size: 1.2em;
-        }
-        ul {
-            margin-top: 10px;
-        }
-        li {
-            margin-top: 5px;
-        }
+      @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
     </style>
-</head>
-<body>
-    <h1 style="font-weight: bold;">What is Phishing?</h1>
-    <h2>Understanding the Basics of Cybercrime</h2>
-    <p>In today's digital age, cybersecurity has become an essential concern for individuals and organizations alike. With the increasing reliance on technology to conduct daily activities, it's crucial to understand the various forms of cyber threats that can compromise your online security. One such threat is phishing.</p>
-    <h2>What is Phishing?</h2>
-    <p>Phishing is a type of social engineering attack where attackers attempt to trick victims into revealing sensitive information, such as passwords, credit card numbers, or personal data. Phishers use deception and manipulation to gain the trust of their targets, making them believe they are interacting with a legitimate entity, such as a bank or a popular online service.</p>
-    <h2>How Does Phishing Work?</h2>
-    <p>Phishers typically use various tactics to trick victims:</p>
-    <ul>
-        <li>Email phishing: They send fraudulent emails that appear to be from a trusted source, such as a bank or a well-known company. The email may contain links or attachments that, when clicked or opened, download malware or steal sensitive information.</li>
-        <li>Spear phishing: Attackers target specific individuals with personalized emails that seem to be tailored to their interests or job roles. This type of attack is often more effective because it appears to be a genuine communication.</li>
-        <li>Phishing websites: Phishers create fake websites that mimic the look and feel of legitimate sites, such as online banking platforms. Victims may be tricked into entering sensitive information on these fraudulent sites.</li>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo" style="background-color: #333">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              background-color: #333;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-family: 'Outfit';
+                background-color: #333;
+              "
+            >
+              <img
+                style="background-color: #333"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-link-web-flaticons-flat-flat-icons-3.png"
+                alt="external-link-web-flaticons-flat-flat-icons-3"
+              />
+              PHISHSNOOPER
+            </div>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="awareness">What's Phishing</a></li>
+          <li><a href="privacy_tips">Safety tips</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 style="font-weight: bold; font-family: 'Outfit';font-size: 75px;padding:30px ;">What is Phishing?</h1>
+    <h2 style="font-family: 'Outfit';font-size: 40px;padding: 20px;">Understanding the Basics of Cybercrime</h2>
+    <p style="font-family: 'DM Mono'; font-size: 25px;padding-left: 20px;padding-right: 100px;">
+      In today's digital age, cybersecurity has become an essential concern for
+      individuals and organizations alike. With the increasing reliance on
+      technology to conduct daily activities, it's crucial to understand the
+      various forms of cyber threats that can compromise your online security.
+      One such threat is phishing.
+    </p>
+    <h2 style="font-family: 'Outfit';font-size: 40px;padding: 20px;">What is Phishing?</h2>
+    <p style="font-family: 'DM Mono'; font-size: 25px;padding-left: 20px;padding-right: 100px;">
+      Phishing is a type of social engineering attack where attackers attempt
+      to trick victims into revealing sensitive information, such as passwords,
+      credit card numbers, or personal data. Phishers use deception and
+      manipulation to gain the trust of their targets, making them believe they
+      are interacting with a legitimate entity, such as a bank or a popular
+      online service.
+    </p>
+    <h2 style="font-family: 'Outfit';font-size: 40px;padding: 20px;">How Does Phishing Work?</h2>
+    <p style="font-family: 'DM Mono'; font-size: 25px;padding-left: 20px;padding-bottom: 30px;">
+      Phishers typically use various tactics to trick victims:
+    </p>
+    <ul style="font-family: 'DM Mono'; font-size: 25px;padding-left: 30px;padding-right: 100px;padding-bottom: 200px;">
+      <li>
+        Email phishing: They send fraudulent emails that appear to be from a
+        trusted source, such as a bank or a well-known company. The email may
+        contain links or attachments that, when clicked or opened, download
+        malware or steal sensitive information.
+      </li>
+      <li>
+        Spear phishing: Attackers target specific individuals with personalized
+        emails that seem to be tailored to their interests or job roles. This
+        type of attack is often more effective because it appears to be a
+        genuine communication.
+      </li>
+      <li>
+        Phishing websites: Phishers create fake websites that mimic the look
+        and feel of legitimate sites, such as online banking platforms. Victims
+        may be tricked into entering sensitive information on these fraudulent
+        sites.
+      </li>
     </ul>
-</body>
+  </body>
 </html>
