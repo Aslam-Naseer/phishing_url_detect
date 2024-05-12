@@ -88,6 +88,8 @@ button:hover {
 
 #button1 {
   background-color: #0b9a52;
+  width: 200px;
+  height: 100px;
 }
 
 #button2 {

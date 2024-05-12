@@ -10,10 +10,8 @@ from datetime import date, datetime
 import time
 from dateutil.parser import parse as date_parse
 from urllib.parse import urlparse
-import socket
 
 class FeatureExtraction:
-    values = []
     features = []
     def __init__(self,url):
         self.features = []
@@ -108,7 +106,7 @@ class FeatureExtraction:
             return -1
         return 1
 
-    # 4.Symbol@ 
+    # 4.Symbol@
     def symbol(self):
         if re.findall("@",self.url):
             return -1
@@ -312,8 +310,6 @@ class FeatureExtraction:
         except:
             return -1
 
-
-
     # 17. InfoEmail
     def InfoEmail(self):
         try:
@@ -491,52 +487,3 @@ class FeatureExtraction:
     
     def getFeaturesList(self):
         return self.features
-
-    def displayFeatures(self):
-      print("Features:")
-      print(f"1. Using IP Address: {self.features[0]}")
-      print(f"2. Long URL: {self.features[1]}")
-      print(f"3. Short URL: {self.features[2]}")
-      print(f"4. '@' Symbol in URL: {self.features[3]}")
-      print(f"5. Double Slashes in URL: {self.features[4]}")
-      print(f"6. Prefix or Suffix in Domain: {self.features[5]}")
-      print(f"7. Number of Subdomains: {self.features[6]}")
-      print(f"8. HTTPS Usage: {self.features[7]}")
-      print(f"9. Domain Registration Length: {self.features[8]}")
-      print(f"10. Favicon: {self.features[9]}")
-      print(f"11. Non-Standard Port: {self.features[10]}")
-      print(f"12. HTTPS in Domain: {self.features[11]}")
-      print(f"13. Request URL: {self.features[12]}")
-      print(f"14. Anchor URLs: {self.features[13]}")
-      print(f"15. Links in Script and Link Tags: {self.features[14]}")
-      print(f"16. Server Form Handler: {self.features[15]}")
-      print(f"17. Info Email: {self.features[16]}")
-      print(f"18. Abnormal URL: {self.features[17]}")
-      print(f"19. Website Forwarding: {self.features[18]}")
-      print(f"20. Status Bar Customization: {self.features[19]}")
-      print(f"21. Disabling Right-Click: {self.features[20]}")
-      print(f"22. Using Pop-up Window: {self.features[21]}")
-      print(f"23. IFrame Redirection: {self.features[22]}")
-      print(f"24. Age of Domain: {self.features[23]}")
-      print(f"25. DNS Recording: {self.features[24]}")
-      print(f"26. Website Traffic: {self.features[25]}")
-      print(f"27. Page Rank: {self.features[26]}")
-      print(f"28. Google Index: {self.features[27]}")
-      print(f"29. Links Pointing to Page: {self.features[28]}")
-      print(f"30. Stats Report: {self.features[29]}")
-
-
-
-
-
-# # Create an instance of FeatureExtraction with the URL you want to test
-# url_to_test = "https://www.example.com"
-# feature_extractor = FeatureExtraction(url_to_test)
-
-# # Retrieve the list of features
-# features_list = feature_extractor.getFeaturesList()
-
-# # Print the extracted features
-# print("Extracted Features for URL:", url_to_test)
-# for feature_value in features_list:
-#     print(feature_value)
