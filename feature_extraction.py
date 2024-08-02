@@ -487,19 +487,3 @@ class FeatureExtraction:
     
     def getFeaturesList(self):
         return self.features
-
-
-
-
-
-# # Create an instance of FeatureExtraction with the URL you want to test
-# url_to_test = "https://www.example.com"
-# feature_extractor = FeatureExtraction(url_to_test)
-
-# # Retrieve the list of features
-# features_list = feature_extractor.getFeaturesList()
-
-# # Print the extracted features
-# print("Extracted Features for URL:", url_to_test)
-# for feature_value in features_list:
-#     print(feature_value)
